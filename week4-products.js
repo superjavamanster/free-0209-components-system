@@ -112,11 +112,7 @@ const app = createApp({
     //     alert(err.data.message);
     //   })
     // },
-    //建立新產品圖片
-    createImages() {
-      this.temp.imagesUrl = [];
-      this.temp.imagesUrl.push('');
-    },
+    
   },
 });
 // 建立 全域 modal編輯元件
@@ -150,7 +146,11 @@ app.component('productModal', {
         alert(err.data.message);
       })
     },
-    
+    //建立新產品圖片
+    createImages() {
+      this.temp.imagesUrl = [];
+      this.temp.imagesUrl.push('');
+    },
   }
 })
 
@@ -172,8 +172,8 @@ app.component('delProductModal',{
   },
   methods: {
     delProduct() {
-      
-      axios.delete(`${this.apiUrl}/api/${this.apiPath}/admin/product/${this.item.id}`).then((response) => {
+      // console.log('test');
+      axios.delete(`${this.apiUrl}/api/${this.apiPath}/admin/product/${this.temp.id}`).then((response) => {
         this.hideModal();
         this.$emit('get-data');
       }).catch((error) => {

@@ -87,11 +87,7 @@
           v-on:get-Data="getData"
           :is-new="isNew"
         ></product-modal>
-        <del-product-modal
-          :temp="temp"
-          v-on:get-Data="getData"
         
-        ></del-product-modal>
         <!--綁定product modal編輯元件-->
       </div>
       <!-- <div id="delProductModal" ref="delProductModal" class="modal fade" tabindex="-1"
@@ -120,6 +116,11 @@
         </div>
       </div> -->
       <!-- Modal -->
+      <del-product-modal
+          :temp="temp"
+          v-on:get-Data="getData"
+        
+        ></del-product-modal>
     </div>
     <script type="text/x-template" id="templateForProductModal">
      <div class="modal-dialog modal-xl">
